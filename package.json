@@ -25,6 +25,8 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.801.2",
     "@angular-devkit/build-ng-packagr": "~0.801.2",
+    "@angular/platform-browser": "~8.1.2",
+    "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/cli": "~8.1.2",
     "@angular/compiler-cli": "~8.1.2",
     "@angular/language-service": "~8.1.2",
