@@ -21,6 +21,9 @@ export class ResourcePage<T extends Resource> {
 
     public resources: Array<T>;
 
+    public totalElements: number;
+    public totalPages: number;
+
     private pageSize: number;
 
     private resourceType: T;
@@ -34,6 +37,8 @@ export class ResourcePage<T extends Resource> {
             this.firstUri = resourceArray.firstUri;
             this.lastUri = resourceArray.lastUri;
             this.pageSize = resourceArray.pageSize;
+            this.totalElements = resourceArray.totalElements;
+            this.totalPages = resourceArray.totalPages;
         }
     }
 
@@ -48,6 +53,8 @@ export class ResourcePage<T extends Resource> {
         resourcePage.firstUri = result._links.first && result._links.first.href;
         resourcePage.lastUri = result._links.last && result._links.last.href;
         resourcePage.pageSize = result.page.size;
+        resourcePage.totalElements = result.page.totalElements;
+        resourcePage.totalPages = result.page.totalPages;
 
         return resourcePage;
     }
