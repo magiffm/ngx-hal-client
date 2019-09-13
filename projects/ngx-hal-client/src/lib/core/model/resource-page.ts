@@ -21,7 +21,11 @@ export class ResourcePage<T extends Resource> {
 
     public resources: Array<T>;
 
-    private pageSize: number;
+    private _totalElements: number;
+    private _totalPages: number;
+    private _pageNumber: number;
+
+    private _pageSize: number;
 
     private resourceType: T;
 
@@ -33,7 +37,10 @@ export class ResourcePage<T extends Resource> {
             this.prevUri = resourceArray.prevUri;
             this.firstUri = resourceArray.firstUri;
             this.lastUri = resourceArray.lastUri;
-            this.pageSize = resourceArray.pageSize;
+            this._pageSize = resourceArray.pageSize;
+            this._totalElements = resourceArray.totalElements;
+            this._totalPages = resourceArray.totalPages;
+            this._pageNumber = resourceArray.pageNumber;
         }
     }
 
@@ -47,7 +54,10 @@ export class ResourcePage<T extends Resource> {
         resourcePage.prevUri = result._links.prev && result._links.prev.href;
         resourcePage.firstUri = result._links.first && result._links.first.href;
         resourcePage.lastUri = result._links.last && result._links.last.href;
-        resourcePage.pageSize = result.page.size;
+        resourcePage._pageSize = result.page.size;
+        resourcePage._totalElements = result.page.totalElements;
+        resourcePage._totalPages = result.page.totalPages;
+        resourcePage._pageNumber = result.page.number;
 
         return resourcePage;
     }
@@ -84,10 +94,13 @@ export class ResourcePage<T extends Resource> {
         return this.doRequest(this.prevUri);
     }
 
-    page(pageNumber: number): Observable<ResourcePage<T>> {
+    page(pageNumber: number, size?: number): Observable<ResourcePage<T>> {
         const uri = ResourceHelper.removeUrlTemplateVars(this.selfUri);
         let httpParams = new HttpParams({fromString: uri});
         httpParams = httpParams.set('page', pageNumber.toString());
+        if (size) {
+            httpParams = httpParams.set('size', size.toString());
+        }
 
         return this.doRequest(httpParams.toString());
     }
@@ -121,4 +134,20 @@ export class ResourcePage<T extends Resource> {
         return observableThrowError(`no ${uri} link defined`);
     }
 
+
+    get totalElements(): number {
+        return this._totalElements;
+    }
+
+    get totalPages(): number {
+        return this._totalPages;
+    }
+
+    get pageNumber(): number {
+        return this._pageNumber;
+    }
+
+    get pageSize(): number {
+        return this._pageSize;
+    }
 }

@@ -1,10 +1,10 @@
 {
-  "name": "@lagoshny/ngx-hal-client",
+  "name": "@tycoonm/ngx-hal-client",
   "version": "0.0.0",
   "description": "This Angular module offers a HAL/JSON http-client to easily interact with a Spring Data Rest API or any API that implements the Spring Data Rest resource model",
   "readme": "README.md",
   "license": "MIT",
-  "author": "Masvis S.r.l. and Ilya Lagoshny",
+  "author": "Masvis S.r.l. and Ilya Lagoshny and Maksym Chubarov",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -14,14 +14,9 @@
     "e2e": "ng e2e"
   },
   "dependencies": {
-    "@angular/animations": "~8.1.2",
     "@angular/common": "~8.1.2",
     "@angular/compiler": "~8.1.2",
     "@angular/core": "~8.1.2",
-    "@angular/forms": "~8.1.2",
-    "@angular/platform-browser": "~8.1.2",
-    "@angular/platform-browser-dynamic": "~8.1.2",
-    "@angular/router": "~8.1.2",
     "core-js": "^3.1.4",
     "rxjs": "~6.5.2",
     "tslib": "^1.10.0",
@@ -30,12 +25,14 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.801.2",
     "@angular-devkit/build-ng-packagr": "~0.801.2",
+    "@angular/platform-browser": "~8.1.2",
+    "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/cli": "~8.1.2",
     "@angular/compiler-cli": "~8.1.2",
     "@angular/language-service": "~8.1.2",
-    "@types/node": "~12.6.8",
     "@types/jasmine": "~3.3.14",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~12.6.8",
     "codelyzer": "~5.1.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -63,12 +60,12 @@
     "Angular 7",
     "Angular 8"
   ],
-  "homepage": "https://github.com/lagoshny/ngx-hal-client",
+  "homepage": "https://github.com/tycoonm/ngx-hal-client",
   "issues": {
-    "url": "https://github.com/lagoshny/ngx-hal-client/issues"
+    "url": "https://github.com/tycoonm/ngx-hal-client/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lagoshny/ngx-hal-client"
+    "url": "https://github.com/tycoonm/ngx-hal-client"
   }
 }
