@@ -94,10 +94,13 @@ export class ResourcePage<T extends Resource> {
         return this.doRequest(this.prevUri);
     }
 
-    page(pageNumber: number): Observable<ResourcePage<T>> {
+    page(pageNumber: number, size?: number): Observable<ResourcePage<T>> {
         const uri = ResourceHelper.removeUrlTemplateVars(this.selfUri);
         let httpParams = new HttpParams({fromString: uri});
         httpParams = httpParams.set('page', pageNumber.toString());
+        if (size) {
+            httpParams = httpParams.set('size', size.toString());
+        }
 
         return this.doRequest(httpParams.toString());
     }
