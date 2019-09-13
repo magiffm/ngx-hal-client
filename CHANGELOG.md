@@ -1,4 +1,4 @@
-## 1.0.11 (2019-09-13)
+## 1.0.12 (2019-09-14)
 
 #### Features
-ResourcePage: added new fields: totalElements, totalPages and pageNumber
+ResourcePage: added new fields: totalElements, totalPages and pageNumber.
