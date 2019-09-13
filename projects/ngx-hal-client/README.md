@@ -6,7 +6,7 @@ This Angular module offers a [HAL/JSON](http://stateless.co/hal_specification.ht
 
 This module needs Angular version 4.3+ since it uses the new HttpClientModule introduced in 4.3
 
-**To see the added functions and improvements go to the [Changelog](https://github.com/lagoshny/ngx-hal-client/blob/master/CHANGELOG.md).**
+**To see the added functions and improvements go to the [Changelog](https://github.com/tycoonm/ngx-hal-client/blob/master/CHANGELOG.md).**
 
 ## Contents
 1. [Changelog](#Changelog)
@@ -25,12 +25,12 @@ This module needs Angular version 4.3+ since it uses the new HttpClientModule in
     4. [CacheHelper](#CacheHelper)        
 
 ## Changelog
-[Learn about the latest improvements](https://github.com/lagoshny/ngx-hal-client/blob/master/CHANGELOG.md).
+[Learn about the latest improvements](https://github.com/tycoonm/ngx-hal-client/blob/master/CHANGELOG.md).
 
 ## Getting started
 ### Installation
 ```
-npm install @lagoshny/ngx-hal-client --save
+npm install @tycoonm/ngx-hal-client --save
 ```
 ### Configuration
 
@@ -44,7 +44,7 @@ In simple case proxy and root uri's are a simple string.
 
 ```typescript
 import {Injectable} from '@angular/core';
-import {ExternalConfigurationHandlerInterface, ExternalConfiguration} from '@lagoshny/ngx-hal-client';
+import {ExternalConfigurationHandlerInterface, ExternalConfiguration} from '@tycoonm/ngx-hal-client';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable()
@@ -77,7 +77,7 @@ export class ExternalConfigurationService implements ExternalConfigurationHandle
 ```typescript
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {NgxHalClientModule} from '@lagoshny/ngx-hal-client';
+import {NgxHalClientModule} from '@tycoonm/ngx-hal-client';
 
 import {AppComponent} from './app.component';
 import {environment} from '../environments/environment';
@@ -108,7 +108,7 @@ By inheriting the Resource class we give HAL specific features to our entity
 **Attention**: The name and type of the members of your resource class must exactly match the name and type of the members of the resource entity exposed by your API  
 
 ```typescript
-import {Resource} from '@lagoshny/ngx-hal-client';
+import {Resource} from '@tycoonm/ngx-hal-client';
 
 export class Player extends Resource {
     id: number;
@@ -118,7 +118,7 @@ export class Player extends Resource {
 ```
 Since a Team consists of multiple players, we model the one-to-many relationship between the Team resource and the Player resources
 ```typescript
-import {Resource} from '@lagoshny/ngx-hal-client';
+import {Resource} from '@tycoonm/ngx-hal-client';
 
 export class Team extends Resource {
     name: string;
@@ -311,7 +311,7 @@ customized by
 + get()
 + customQuery()
 + search() on server-side with spring findBy* method in repository interface
-+ searchPage() on server-side with spring findBy* method which return list objects as page (see [more details](https://github.com/lagoshny/ngx-hal-client/blob/master/CHANGELOG.md#106-2019-08-19))
++ searchPage() on server-side with spring findBy* method which return list objects as page (see [more details](https://github.com/tycoonm/ngx-hal-client/blob/master/CHANGELOG.md#106-2019-08-19))
 + searchSingle()
 + create()
 + update()
@@ -336,8 +336,8 @@ customized by
 + updateRelation() // update relation
 + substituteRelation()
 + deleteRelation()    // remove relation
-+ postRelation()    // perform post request for relation (see [more details](https://github.com/lagoshny/ngx-hal-client/blob/master/CHANGELOG.md#102-2019-08-09)) 
-+ pathRelation()    // perform patch request for relation (see [more details](https://github.com/lagoshny/ngx-hal-client/blob/master/CHANGELOG.md#102-2019-08-09))
++ postRelation()    // perform post request for relation (see [more details](https://github.com/tycoonm/ngx-hal-client/blob/master/CHANGELOG.md#102-2019-08-09)) 
++ pathRelation()    // perform patch request for relation (see [more details](https://github.com/tycoonm/ngx-hal-client/blob/master/CHANGELOG.md#102-2019-08-09))
 
 ### ResourceHelper
 + headers
