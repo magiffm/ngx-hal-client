@@ -311,7 +311,7 @@ customized by
 + get()
 + customQuery()
 + search() on server-side with spring findBy* method in repository interface
-+ searchPage() on server-side with spring findBy* method which return list objects as page (see [more details](https://github.com/tycoonm/ngx-hal-client/blob/master/CHANGELOG.md#106-2019-08-19))
++ searchPage() on server-side with spring findBy* method which return list objects as page
 + searchSingle()
 + create()
 + update()
@@ -336,8 +336,8 @@ customized by
 + updateRelation() // update relation
 + substituteRelation()
 + deleteRelation()    // remove relation
-+ postRelation()    // perform post request for relation (see [more details](https://github.com/tycoonm/ngx-hal-client/blob/master/CHANGELOG.md#102-2019-08-09)) 
-+ pathRelation()    // perform patch request for relation (see [more details](https://github.com/tycoonm/ngx-hal-client/blob/master/CHANGELOG.md#102-2019-08-09))
++ postRelation()    // perform post request for relation
++ pathRelation()    // perform patch request for relation
 
 ### ResourceHelper
 + headers
