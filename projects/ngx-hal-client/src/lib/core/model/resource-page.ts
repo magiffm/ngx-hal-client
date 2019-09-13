@@ -21,11 +21,11 @@ export class ResourcePage<T extends Resource> {
 
     public resources: Array<T>;
 
-    public totalElements: number;
-    public totalPages: number;
-    public pageNumber: number;
+    private _totalElements: number;
+    private _totalPages: number;
+    private _pageNumber: number;
 
-    private pageSize: number;
+    private _pageSize: number;
 
     private resourceType: T;
 
@@ -37,10 +37,10 @@ export class ResourcePage<T extends Resource> {
             this.prevUri = resourceArray.prevUri;
             this.firstUri = resourceArray.firstUri;
             this.lastUri = resourceArray.lastUri;
-            this.pageSize = resourceArray.pageSize;
-            this.totalElements = resourceArray.totalElements;
-            this.totalPages = resourceArray.totalPages;
-            this.pageNumber = resourceArray.pageNumber;
+            this._pageSize = resourceArray.pageSize;
+            this._totalElements = resourceArray.totalElements;
+            this._totalPages = resourceArray.totalPages;
+            this._pageNumber = resourceArray.pageNumber;
         }
     }
 
@@ -54,10 +54,10 @@ export class ResourcePage<T extends Resource> {
         resourcePage.prevUri = result._links.prev && result._links.prev.href;
         resourcePage.firstUri = result._links.first && result._links.first.href;
         resourcePage.lastUri = result._links.last && result._links.last.href;
-        resourcePage.pageSize = result.page.size;
-        resourcePage.totalElements = result.page.totalElements;
-        resourcePage.totalPages = result.page.totalPages;
-        resourcePage.pageNumber = result.page.number;
+        resourcePage._pageSize = result.page.size;
+        resourcePage._totalElements = result.page.totalElements;
+        resourcePage._totalPages = result.page.totalPages;
+        resourcePage._pageNumber = result.page.number;
 
         return resourcePage;
     }
@@ -134,4 +134,20 @@ export class ResourcePage<T extends Resource> {
         return observableThrowError(`no ${uri} link defined`);
     }
 
+
+    get totalElements(): number {
+        return this._totalElements;
+    }
+
+    get totalPages(): number {
+        return this._totalPages;
+    }
+
+    get pageNumber(): number {
+        return this._pageNumber;
+    }
+
+    get pageSize(): number {
+        return this._pageSize;
+    }
 }
