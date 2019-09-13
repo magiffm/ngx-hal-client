@@ -23,6 +23,7 @@ export class ResourcePage<T extends Resource> {
 
     public totalElements: number;
     public totalPages: number;
+    public pageNumber: number;
 
     private pageSize: number;
 
@@ -39,6 +40,7 @@ export class ResourcePage<T extends Resource> {
             this.pageSize = resourceArray.pageSize;
             this.totalElements = resourceArray.totalElements;
             this.totalPages = resourceArray.totalPages;
+            this.pageNumber = resourceArray.pageNumber;
         }
     }
 
@@ -55,6 +57,7 @@ export class ResourcePage<T extends Resource> {
         resourcePage.pageSize = result.page.size;
         resourcePage.totalElements = result.page.totalElements;
         resourcePage.totalPages = result.page.totalPages;
+        resourcePage.pageNumber = result.page.number;
 
         return resourcePage;
     }
