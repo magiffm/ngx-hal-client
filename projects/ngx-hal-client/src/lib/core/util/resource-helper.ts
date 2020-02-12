@@ -94,7 +94,11 @@ export class ResourceHelper {
                             if (Utils.isPrimitive(element)) {
                                 result[key].push(element);
                             } else {
+                                if(element._links){
+                                    result[key].push(element._links.self.href)
+                                } else {
                                 result[key].push(this.resolveRelations(element));
+                                }
                             }
                         });
                     }
