@@ -1,16 +1,16 @@
 {
   "name": "@magiffm/ngx-hal-client",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "This Angular module offers a HAL/JSON http-client to easily interact with a Spring Data Rest API or any API that implements the Spring Data Rest resource model",
   "readme": "README.md",
   "license": "MIT",
   "author": "Masvis S.r.l. and Ilya Lagoshny and Maksym Chubarov",
   "peerDependencies": {
-    "@angular/common": "^8.1.2",
-    "@angular/core": "^8.1.2",
-    "core-js": "^3.1.4",
+    "@angular/common": "^10.2.3",
+    "@angular/core": "^10.2.3",
+    "core-js": "^3.7.0",
     "hash.js": "1.1.7",
-    "rxjs": "~6.5.2"
+    "rxjs": "~6.6.3"
   },
   "keywords": [
     "Spring Data Rest",
